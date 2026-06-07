@@ -53,32 +53,14 @@ This API is complementary to the package [`@stdlib/blas-base/zaxpy`][@stdlib/bla
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/blas-ext-base-zaxpby
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var zaxpby = require( '@stdlib/blas-ext-base-zaxpby' );
+import zaxpby from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-zaxpby@esm/index.mjs';
 ```
 
 #### zaxpby( N, alpha, x, strideX, beta, y, strideY )
@@ -86,8 +68,8 @@ var zaxpby = require( '@stdlib/blas-ext-base-zaxpby' );
 Multiplies a double-precision complex floating-point strided array `x` by a constant and adds the result to a double-precision complex floating-point strided array `y` multiplied by a constant.
 
 ```javascript
-var Complex128Array = require( '@stdlib/array-complex128' );
-var Complex128 = require( '@stdlib/complex-float64-ctor' );
+import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
+import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@esm/index.mjs';
 
 var x = new Complex128Array( [ 1.0, 2.0, 3.0, -1.0, 0.0, 1.0 ] );
 var y = new Complex128Array( [ 2.0, 1.0, -1.0, 3.0, 4.0, 0.0 ] );
@@ -112,8 +94,8 @@ The function has the following parameters:
 The `N` and stride parameters determine which elements in the strided arrays are accessed at runtime. For example, to multiply every other element of `x` by `alpha` and add to every other element of `y` multiplied by `beta`:
 
 ```javascript
-var Complex128Array = require( '@stdlib/array-complex128' );
-var Complex128 = require( '@stdlib/complex-float64-ctor' );
+import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
+import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@esm/index.mjs';
 
 var x = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
 var y = new Complex128Array( [ 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0 ] );
@@ -130,8 +112,8 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 <!-- eslint-disable max-len -->
 
 ```javascript
-var Complex128Array = require( '@stdlib/array-complex128' );
-var Complex128 = require( '@stdlib/complex-float64-ctor' );
+import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
+import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@esm/index.mjs';
 
 // Initial arrays...
 var x0 = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0 ] );
@@ -154,8 +136,8 @@ zaxpby( 3, alpha, x1, 1, beta, y1, 1 );
 Multiplies a double-precision complex floating-point strided array `x` by a constant and adds the result to a double-precision complex floating-point strided array `y` multiplied by a constant using alternative indexing semantics.
 
 ```javascript
-var Complex128Array = require( '@stdlib/array-complex128' );
-var Complex128 = require( '@stdlib/complex-float64-ctor' );
+import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
+import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@esm/index.mjs';
 
 var x = new Complex128Array( [ 1.0, 2.0, 3.0, -1.0, 0.0, 1.0 ] );
 var y = new Complex128Array( [ 2.0, 1.0, -1.0, 3.0, 4.0, 0.0 ] );
@@ -177,8 +159,8 @@ While [`typed array`][mdn-typed-array] views mandate a view offset based on the 
 <!-- eslint-disable max-len -->
 
 ```javascript
-var Complex128Array = require( '@stdlib/array-complex128' );
-var Complex128 = require( '@stdlib/complex-float64-ctor' );
+import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
+import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@esm/index.mjs';
 
 var x = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0 ] );
 var y = new Complex128Array( [ 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0 ] );
@@ -210,12 +192,17 @@ zaxpby.ndarray( 3, alpha, x, 1, x.length-3, beta, y, 1, y.length-3 );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
-var Complex128Array = require( '@stdlib/array-complex128' );
-var Complex128 = require( '@stdlib/complex-float64-ctor' );
-var logEach = require( '@stdlib/console-log-each' );
-var zaxpby = require( '@stdlib/blas-ext-base-zaxpby' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="module">
+
+import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@esm/index.mjs';
+import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
+import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@esm/index.mjs';
+import logEach from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@esm/index.mjs';
+import zaxpby from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-zaxpby@esm/index.mjs';
 
 var xbuf = discreteUniform( 20, -100, 100, {
     'dtype': 'float64'
@@ -230,6 +217,10 @@ var beta = new Complex128( 1.0, -1.0 );
 
 zaxpby( x.length, alpha, x, 1, beta, y, 1 );
 logEach( '%s', y );
+
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -238,162 +229,7 @@ logEach( '%s', y );
 
 <!-- C interface documentation. -->
 
-* * *
 
-<section class="c">
-
-## C APIs
-
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
-
-<section class="intro">
-
-</section>
-
-<!-- /.intro -->
-
-<!-- C usage documentation. -->
-
-<section class="usage">
-
-### Usage
-
-```c
-#include "stdlib/blas/ext/base/zaxpby.h"
-```
-
-#### stdlib_strided_zaxpby( N, alpha, \*X, strideX, beta, \*Y, strideY )
-
-Multiplies a double-precision complex floating-point strided array `x` by a constant and adds the result to a double-precision complex floating-point strided array `y` multiplied by a constant.
-
-```c
-#include "stdlib/complex/float64/ctor.h"
-
-const double x[] = { 1.0, -2.0, 3.0, -4.0, 5.0, -6.0, 7.0, -8.0 };
-double y[] = { 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0 };
-const stdlib_complex128_t alpha = stdlib_complex128( 2.0, 1.0 );
-const stdlib_complex128_t beta = stdlib_complex128( 1.0, -1.0 );
-
-stdlib_strided_zaxpby( 4, alpha, (stdlib_complex128_t *)x, 1, beta, (stdlib_complex128_t *)y, 1 );
-```
-
-The function accepts the following arguments:
-
--   **N**: `[in] CBLAS_INT` number of indexed elements.
--   **alpha**: `[in] stdlib_complex128_t` first scalar constant.
--   **X**: `[in] stdlib_complex128_t*` input array.
--   **strideX**: `[in] CBLAS_INT` stride length for `X`.
--   **beta**: `[in] stdlib_complex128_t` second scalar constant.
--   **Y**: `[inout] stdlib_complex128_t*` output array.
--   **strideY**: `[in] CBLAS_INT` stride length for `Y`.
-
-```c
-void stdlib_strided_zaxpby( const CBLAS_INT N, const stdlib_complex128_t alpha, const stdlib_complex128_t *X, const CBLAS_INT strideX, const stdlib_complex128_t beta, stdlib_complex128_t *Y, const CBLAS_INT strideY );
-```
-
-<!--lint disable maximum-heading-length-->
-
-#### stdlib_strided_zaxpby_ndarray( N, alpha, \*X, strideX, offsetX, beta, \*Y, strideY, offsetY )
-
-<!--lint enable maximum-heading-length-->
-
-Multiplies a double-precision complex floating-point strided array `x` by a constant and adds the result to a double-precision complex floating-point strided array `y` multiplied by a constant using alternative indexing semantics.
-
-```c
-#include "stdlib/complex/float64/ctor.h"
-
-const double x[] = { 1.0, -2.0, 3.0, -4.0, 5.0, -6.0, 7.0, -8.0 };
-double y[] = { 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0 };
-const stdlib_complex128_t alpha = stdlib_complex128( 2.0, 1.0 );
-const stdlib_complex128_t beta = stdlib_complex128( 1.0, -1.0 );
-
-stdlib_strided_zaxpby_ndarray( 4, alpha, (stdlib_complex128_t *)x, 1, 0, beta, (stdlib_complex128_t *)y, 1, 0 );
-```
-
-The function accepts the following arguments:
-
--   **N**: `[in] CBLAS_INT` number of indexed elements.
--   **alpha**: `[in] stdlib_complex128_t` first scalar constant.
--   **X**: `[in] stdlib_complex128_t*` input array.
--   **strideX**: `[in] CBLAS_INT` stride length for `X`.
--   **offsetX**: `[in] CBLAS_INT` starting index for `X`.
--   **beta**: `[in] stdlib_complex128_t` second scalar constant.
--   **Y**: `[inout] stdlib_complex128_t*` output array.
--   **strideY**: `[in] CBLAS_INT` stride length for `Y`.
--   **offsetY**: `[in] CBLAS_INT` starting index for `Y`.
-
-```c
-void stdlib_strided_zaxpby_ndarray( const CBLAS_INT N, const stdlib_complex128_t alpha, const stdlib_complex128_t *X, const CBLAS_INT strideX, const CBLAS_INT offsetX, const stdlib_complex128_t beta, stdlib_complex128_t *Y, const CBLAS_INT strideY, const CBLAS_INT offsetY );
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-</section>
-
-<!-- /.notes -->
-
-<!-- C API usage examples. -->
-
-<section class="examples">
-
-### Examples
-
-```c
-#include "stdlib/blas/ext/base/zaxpby.h"
-#include "stdlib/complex/float64/ctor.h"
-#include "stdlib/complex/float64/real.h"
-#include "stdlib/complex/float64/imag.h"
-#include <stdio.h>
-
-int main( void ) {
-    // Create strided arrays:
-    const stdlib_complex128_t x[] = {
-        stdlib_complex128( 1.0, -2.0 ),
-        stdlib_complex128( 3.0, -4.0 ),
-        stdlib_complex128( 5.0, -6.0 ),
-        stdlib_complex128( 7.0, -8.0 )
-    };
-    stdlib_complex128_t y[] = {
-        stdlib_complex128( 2.0, 3.0 ),
-        stdlib_complex128( 4.0, 5.0 ),
-        stdlib_complex128( 6.0, 7.0 ),
-        stdlib_complex128( 8.0, 9.0 )
-    };
-
-    // Specify the number of indexed elements:
-    const int N = 4;
-
-    // Specify strides:
-    const int strideX = 1;
-    const int strideY = 1;
-
-    // Define scalar constants:
-    stdlib_complex128_t alpha = stdlib_complex128( 2.0, 1.0 );
-    stdlib_complex128_t beta = stdlib_complex128( 1.0, -1.0 );
-
-    // Multiply `x` by a constant and add to `y` multiplied by a constant:
-    stdlib_strided_zaxpby( N, alpha, x, strideX, beta, y, strideY );
-
-    // Print the result:
-    for ( int i = 0; i < N; i++ ) {
-        printf( "y[ %i ] = %lf + %lfi\n", i, stdlib_complex128_real( y[ i ] ), stdlib_complex128_imag( y[ i ] ) );
-    }
-}
-```
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -412,7 +248,7 @@ int main( void ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -475,9 +311,9 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-zaxpby/main/LICENSE
 
-[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex64
+[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex64/tree/esm
 
-[@stdlib/blas/base/zaxpy]: https://github.com/stdlib-js/blas-base-zaxpy
+[@stdlib/blas/base/zaxpy]: https://github.com/stdlib-js/blas-base-zaxpy/tree/esm
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
