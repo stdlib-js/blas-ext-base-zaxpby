@@ -1,0 +1,49 @@
+# CHANGELOG
+
+> Package changelog.
+
+<section class="release" id="unreleased">
+
+## Unreleased (2026-06-07)
+
+<section class="features">
+
+### Features
+
+-   [`2aa1270`](https://github.com/stdlib-js/stdlib/commit/2aa1270d82e129f1f3f6de8f7df2e924863fd6bf) - add `blas/ext/base/zaxpby` [(#12649)](https://github.com/stdlib-js/stdlib/pull/12649)
+
+</section>
+
+<!-- /.features -->
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`2aa1270`](https://github.com/stdlib-js/stdlib/commit/2aa1270d82e129f1f3f6de8f7df2e924863fd6bf) - **feat:** add `blas/ext/base/zaxpby` [(#12649)](https://github.com/stdlib-js/stdlib/pull/12649) _(by Karan Anand, Athan Reines)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 2 people contributed to this release. Thank you to the following contributors:
+
+-   Athan Reines
+-   Karan Anand
+
+</section>
+
+<!-- /.contributors -->
+
+</section>
+
+<!-- /.release -->
+
