@@ -475,7 +475,7 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-zaxpby/main/LICENSE
 
-[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex64
+[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex128
 
 [@stdlib/blas/base/zaxpy]: https://github.com/stdlib-js/blas-base-zaxpy
 
